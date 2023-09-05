@@ -31,7 +31,7 @@ ax.yaxis.grid(True, which='major', ls='dotted')
 # plt.plot(imap_xcdf, imap_ycdf, '-', label="IMap")
 # plt.plot(zmap_xcdf, zmap_ycdf, '-', label="ZMap")
 x = np.array(['TCP', 'RDMA Write', 'RDMA Read', 'RDMA Send'])
-y = np.array([50, 2.22, 4.32, 2.24])
+y = np.array([25, 2.22, 4.32, 2.24])
 plt.bar(x, y)
 plt.xticks(rotation=15)
 

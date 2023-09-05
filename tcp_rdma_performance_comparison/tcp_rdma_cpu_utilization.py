@@ -2,7 +2,6 @@
 # coding=utf-8
 
 import sys
-import random
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
@@ -36,13 +35,13 @@ ax.xaxis.grid(True, which='major', ls='dotted')
 ax.yaxis.grid(True, which='major', ls='dotted')
 
 plt.ylim(0, 100)
-plt.xlim(128, 65536*2)
+# plt.xlim(128, 65536*2)
 
-x_loc = [256, 1024, 4096, 16384, 65536]
-x_value = ["256", "1K", "4K", "16K", "64K"]
+x_loc = [256, 1024, 4096, 16384, 65536, 65536*4, 65536*16, 65536*64, 65536*256]
+x_value = ["256", "1K", "4K", "16K", "64K", "256K", "1M", "4M", "16M"]
 
-y_tcp = [36.7, 37.2, 37.1, 36.9, 36.8]
-y_rdma = [0.8, 0.82, 0.8, 0.8, 0.8]
+y_tcp = [36.7, 37.2, 37.1, 36.9, 36.8, 37, 36.8, 36.6, 36]
+y_rdma = [0.8, 0.82, 0.8, 0.8, 0.8, 0.8, 0.81, 0.82, 0.82]
 
 plt.plot(x_loc, y_tcp, marker='o', label="TCP")
 plt.plot(x_loc, y_rdma, marker='o', label="RDMA")
