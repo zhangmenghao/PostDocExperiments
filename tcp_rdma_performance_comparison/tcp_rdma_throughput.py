@@ -40,8 +40,8 @@ plt.ylim(0, 100)
 x_loc = [256, 1024, 4096, 16384, 65536, 65536*4, 65536*16, 65536*64, 65536*256]
 x_value = ["256", "1K", "4K", "16K", "64K", "256K", "1M", "4M", "16M"]
 
-y_tcp = [16.5, 16.6, 16.9, 16.9, 17.4, 31.5, 48, 72.8, 92.1]
-y_rdma = [13.8, 50.85, 91.97, 92.44, 92.55, 92.56, 92.55, 92.56, 92.56]
+y_tcp =   [ 0.03, 0.12, 0.49,   1.8,   7.3,     28, 92.1, 92.5, 92.5]
+y_rdma =  [ 13.8,50.85,91.97, 92.44, 92.55,  92.56,92.55,92.56, 92.56]
 
 plt.plot(x_loc, y_tcp, marker='o', label="TCP")
 plt.plot(x_loc, y_rdma, marker='o', label="RDMA")
@@ -55,7 +55,7 @@ for label in ax.xaxis.get_ticklabels():
 for label in ax.yaxis.get_ticklabels():
     label.set_fontsize(plot_config.font_size)
 
-plt.xlabel('Message Size', fontsize=plot_config.font_size)
+plt.xlabel('Message Size (Byte)', fontsize=plot_config.font_size)
 plt.ylabel('Throughput (Gbps)', fontsize=plot_config.font_size)
 
 plt.tight_layout(rect=[0, 0, 1, 1])
